@@ -1,0 +1,18 @@
+name: Run ASCII Script
+
+on:
+    push:
+        branches: [ main ]
+
+jobs:
+    ascii-job:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout Repo
+                uses: actions/checkout@v5
+
+            -   name: List files before run
+                run: ls -ltra
+
+            -   name: Run script
+                run: ./ascii-script.sh
