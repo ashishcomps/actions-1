@@ -13,9 +13,20 @@ jobs:
                     echo "My first GitHub Actions Job"
                     ls -ltra
                     cat README.md
+
             # -   name: Welcome message
             #     run: echo "My First Github actions job"
             # -   name: List files
             #     run: ls
             # -   name: Read file
             #     run: cat README.md
+
+            -   name: Install cowsay
+                run: sudo apt-get update && sudo apt-get install -y cowsay
+
+            -   name: Generate ASCII Artwork
+                run: |
+                    cowsay -f dragon "Run for cover, I am a DRAGON.....RAWR" >> dragon.txt
+                    cat dragon.txt
+
+            
